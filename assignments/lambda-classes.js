@@ -7,6 +7,9 @@ class Person{
         this.location = props.location;
     }
 }
+Person.prototype.speak = function () {
+console.log (`Hello my name is ${this.name}, I am from ${this.location}`)
+}
 
 class Instructor{
     constructor (props) {
@@ -14,6 +17,9 @@ class Instructor{
         this.age = props.age;
         this.catchPhrase = props.catchPhrase;
     }
+}
+Instructor.prototype.demo = function() {
+
 }
 class Students{
     constructor (props){
