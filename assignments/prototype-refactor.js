@@ -7,12 +7,12 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
-=== GameObject ===
-* createdAt
-* name
-* dimensions (These represent the character's size in the video game)
-* destroy() // prototype method that returns: `${this.name} was removed from the game.`
-*/
+//  === GameObject ===
+//  createdAt
+//  name
+//  dimensions (These represent the character's size in the video game)
+//  destroy() // prototype method that returns: `${this.name} was removed from the game.`
+
 function GameObject(attrs) {
 this.createdAt = attrs.createdAt;
 this.name = attrs.name;
