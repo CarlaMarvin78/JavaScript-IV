@@ -13,15 +13,17 @@ Prototype Refactor
 //  dimensions (These represent the character's size in the video game)
 //  destroy() // prototype method that returns: `${this.name} was removed from the game.`
 
-function GameObject(attrs) {
-this.createdAt = attrs.createdAt;
-this.name = attrs.name;
-this.dimensions = attrs.dimensions;
-}
+class GameObject {
+  constructor(attrs) {
+    this.createdAt = attrs.createdAt;
+    this.name = attrs.name;
+    this.dimensions = attrs.dimensions;
+  }
 
-GameObject.prototype.destroy = function() {
-return `${this.name} was removed from the game.`
-};
+  destroy() {
+    return `${this.name} was removed from the game.`;
+  }
+}
 
 /*
 === CharacterStats ===
@@ -29,14 +31,15 @@ return `${this.name} was removed from the game.`
 * takeDamage() // prototype method -> returns the string '<object name> took damage.'
 * should inherit destroy() from GameObject's prototype
 */
-function CharacterStats(attrs) {
-GameObject.call(this, attrs);
-this.healthPoints = attrs.healthPoints;
-}
-
-CharacterStats.prototype = Object.create(GameObject.prototype);
-CharacterStats.prototype.takeDamage = function() {
-return `${this.name} took damage.`;
+class CharacterStats extends GameObject {
+  constructor(attrs) {
+    super(attrs);
+    this.healthPoints = attrs.healthPoints;
+  }
+  
+  takeDamage() {
+    return `${this.name} took damage.`;
+  }
 }
 
 /*
